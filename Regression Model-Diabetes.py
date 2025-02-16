@@ -101,7 +101,7 @@ print(Y_pred)
 print("Parameters:", model.coef_)       #coefficients of feature varibales(diabetes.feature_names)
 print("Intercept:", model.intercept_)
 print("MSE: %.2f"
-      % mean_squared_error(y_test, Y_pred))  # Y is the predicted value
+      % mean_squared_error(y_test, Y_pred))  
 print("Coefficient of determination:%.2f"
       % r2_score(y_test, Y_pred))
 
@@ -145,13 +145,13 @@ import matplotlib.pyplot as plt
 # In[211]:
 
 
-# first plot to just see how data points look on the plot
+# first look at data points on the plot
 sns.scatterplot(x=y_test,y=Y_pred, )
 
 
 # In[213]:
 
-
+# FINAL AND MAIN SCATTER PLOT WITH REGRESSION MODEL LINE
 plt.figure(figsize = (12, 8))
 plt.scatter(y_test, Y_pred, marker ='+', alpha =0.5, color='blue', label = 'data points')
 plt.plot([y_test.min(), y_test.max()],
