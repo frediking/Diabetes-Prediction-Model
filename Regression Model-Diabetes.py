@@ -146,7 +146,7 @@ import matplotlib.pyplot as plt
 
 
 # first look at data points on the plot
-sns.scatterplot(x=y_test,y=Y_pred, )
+sns.scatterplot(x=y_test, y=Y_pred)
 
 
 # In[213]:
