@@ -49,7 +49,7 @@ The **Diabetes dataset** consists of:
 
 | Model Type          | MSE (Lower is Better) | R² Score (Higher is Better) |
 |---------------------|----------------------|-----------------------------|
-| **Linear Regression** | 3410.87| 0.45|
+| **Linear Regression** | 2900.19| 0.45|
 | **Ridge Regression** | 2693.67| 0.50|
 
 ### 🔍 Observations:
