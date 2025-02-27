@@ -1,8 +1,15 @@
-# 🏥 Diabetes Prediction using Linear Regression
+# 🏥 Diabetes Prediction using Linear & Ridge Regression
 
 ## 📌 Overview
 
-This project builds a **Linear Regression model** to predict diabetes progression based on ten baseline variables, including age, BMI, blood pressure, and blood serum measurements. The dataset is sourced from **Scikit-Learn's Diabetes Dataset**, containing **442 instances** with **10 numerical features**.
+This project builds a **Regression model** to predict diabetes progression based on ten baseline variables, including age, BMI, blood pressure, and blood serum measurements. The dataset is sourced from **Scikit-Learn's Diabetes Dataset**, containing **442 instances** with **10 numerical features**.
+
+The project now includes:
+- **Linear Regression**
+- **Ridge Regression** (L2 Regularization)
+- **Feature Scaling** using `StandardScaler`
+- **Performance Comparison (Before vs. After Ridge Regression)**
+
 
 ## 📂 Dataset Information
 
@@ -25,66 +32,60 @@ The **Diabetes dataset** consists of:
    - Features (`X`) and target (`y`) are extracted.
 
 2. **Data Preprocessing**  
-   - Data is **split** into **80% training** and **20% testing** using `train_test_split`.
-   - Features are **scaled** using `StandardScaler()` for better model performance.
-
+   - Data is **split** into **80% training** and **20% testing** using `train_test_split()`.
+   - Features are **scaled** using `StandardScaler` to improve model performance.(Linear Regression)
+   - **Polynomial Features** are created     using scaled feature dataset X     (Ridge Regression)
+     
 3. **Model Training**  
-   - A **Linear Regression Model** is trained on the dataset using `linear_model.LinearRegression()`.
+   - **Linear Regression** is trained on the scaled features.
+   - **Ridge Regression** is also implemented to handle multicollinearity and prevent overfitting . Ridge Regression is trained using **Polynomial Features**
 
-4. **Predictions & Evaluation**  
-   - Predictions are made on the test dataset.
-   - Model performance is evaluated using:
-     - **Mean Squared Error (MSE)**
-     - **R² Score (Coefficient of Determination)**
-
-## 📈 Results
-
-- **Model Parameters (Coefficients)**:
-  ```
-  [  2.69,  -9.94,  19.92,  15.19, -41.56,  
-     26.39,   4.13,   6.41,  37.92,   5.31 ]
-  ```
-
-- **Intercept**: `153.45`
-
-- **Performance Metrics**:
-  - **Mean Squared Error (MSE)**: `3410.87`
-  - **R² Score**: `0.49`
+4. **Model Evaluation**  
+   - **Mean Squared Error (MSE)** is calculated to measure model performance.
+   - **R² Score** is used to evaluate the model’s accuracy.
 
 
-### 2️⃣ Regression Line Plot  
-```python
-plt.figure(figsize=(12, 8))
-plt.scatter(y_test, Y_pred, marker='+', alpha=0.5, color='blue', label='Data Points')
-plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r-', lw=2, label='Prediction Line')
-plt.title("Diabetes Prediction - Linear Regression")
-plt.xlabel("Actual Values (y_test)")
-plt.ylabel("Predicted Values (Y_pred)")
-plt.legend()
-plt.grid(True)
-plt.show()
-```
+## 📈 Performance Comparison: Linear vs. Ridge Regression
+
+| Model Type          | MSE (Lower is Better) | R² Score (Higher is Better) |
+|---------------------|----------------------|-----------------------------|
+| **Linear Regression** | 3410.87| 0.45|
+| **Ridge Regression** | 2693.67| 0.50|
+
+### 🔍 Observations:
+- Ridge Regression **reduces MSE**, leading to **better prediction accuracy**.
+- The **R² Score improved**, indicating a better fit to the data.
+- Overfitting is addressed as Ridge Regression **prevents excessive weight magnitudes** on features.
+- On the training set, **Linear Regression showed a higher R² than on the test set**, suggesting overfitting, which Ridge Regression corrected.
+
+## 🛠️ Technologies Used
+
+- **Python**
+- **Scikit-Learn** (`sklearn`)
+- **NumPy**
+- **Pandas**
 
 ## 📌 How to Run This Project
 
-1. **Clone the Repository**  
+1. Install dependencies:
    ```bash
-   git clone https://github.com/frediking/Diabetes-Prediction-Linear-Regression.git
-   cd diabetes-prediction
+   pip install numpy pandas scikit-learn or run requirements.txt
    ```
+2. Run the Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+3. Open the `Regression Model-Diabetes Prediction(SCALED FEATURES).ipynb` file and execute the cells.
 
-2. **Install Dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Python Script**  
-   ```bash
-   python Regression Model-Diabetes.py
-   ```
 
 4. **View Predictions & Plots**  
    The model will generate predictions, evaluation metrics, and visualizations.
+
+## 📌 Notes
+
+- Feature scaling is crucial when using models like Ridge Regression.
+- Ridge Regression helps in handling multicollinearity and improving model stability.
+- The dataset is small, so performance can be impacted by data splitting.
 
 ## 🤝 Contribution
 
