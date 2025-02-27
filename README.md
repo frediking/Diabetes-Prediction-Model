@@ -96,33 +96,40 @@ The **Diabetes dataset** consists of:
 
 A healthcare provider seeks to predict the progression of diabetes in patients using multiple health indicators. By inputting patient data into the trained regression models, the provider can forecast disease progression, aiding in personalized treatment planning.
 
-# Example patient data: [age, sex, bmi, bp, s1, s2, s3, s4, s5, s6]
+**Example patient data**: [age, sex, bmi, bp, s1, s2, s3, s4, s5, s6]
 patient_data = [[0.03807591, 0.05068012, 0.06169621, 0.02187235, -0.0442235,
                  -0.03482076, -0.04340085, -0.00259226, 0.01990749, -0.01764613]]
 
-# Load saved models
-diabetes_LGmodel = joblib.load("diabetes_LGmodel.pkl")
-ridge_regression_model = joblib.load("ridge_regression_model.pkl")
+### - Load saved models
+**diabetes_LGmodel** = joblib.load("diabetes_LGmodel.pkl") 
 
-# Scale the patient data
+**ridge_regression_model** = joblib.load("ridge_regression_model.pkl")
+
+
+### - Scale the patient data
 scaled_data = scaler.transform(patient_data)
 
-# Predict using Linear Regression
+### - Predict using Linear Regression
 prediction_lr = diabetes_LGmodel.predict(scaled_data)[0]
 
-# Predict using Ridge Regression
-prediction_ridge = ridge_regression_model.predict(scaled_data)[0]
+### - Ridge Regression Prediction
+#### Create polynomial features first
+patient_data_poly = poly.transform(scaled data)
 
-# Display results
+#### Predict using Ridge Regression
+prediction_ridge = ridge_regression_model.predict(patient_data_poly)[0]
+
+### - Display results
 print(f"Linear Regression predicts a diabetes progression score of {prediction_lr:.2f}")
+
 print(f"Ridge Regression predicts a diabetes progression score of {prediction_ridge:.2f}")
 
 
 ### Expected Output
 
 
-Linear Regression predicts a diabetes progression score of 213.24
-Ridge Regression predicts a diabetes progression score of 212.52
+- Linear Regression predicts a diabetes progression score of 213.24
+- Ridge Regression predicts a diabetes progression score of 212.52
 
 
 
