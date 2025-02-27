@@ -69,16 +69,18 @@ The **Diabetes dataset** consists of:
 
 1. Install dependencies:
    ```bash
-   pip install numpy pandas scikit-learn or run requirements.txt
+   pip install numpy pandas scikit-learn    matplotlib.pyplot 
    ```
-2. Run the Jupyter Notebook:
+   or see requirements.txt file in repo.
+   
+3. Run the Jupyter Notebook:
    ```bash
    jupyter notebook
    ```
-3. Open the `Regression Model-Diabetes Prediction(SCALED FEATURES).ipynb` file and execute the cells.
+4. Open the `Regression Model-Diabetes Prediction(SCALED FEATURES).ipynb` file and execute the cells.
 
 
-4. **View Predictions & Plots**  
+5. **View Predictions & Plots**  
    The model will generate predictions, evaluation metrics, and visualizations.
 
 ## 📌 Notes
