@@ -138,7 +138,7 @@ print(f"Lasso Regression predicts a diabetes progression score of {prediction_la
 
 - Linear Regression predicts a diabetes progression score of 213.24
 - Ridge Regression predicts a diabetes progression score of 212.52
-- Lasso Regression predicts a diabetes progression score of 211.38
+- Lasso Regression predicts a diabetes progression score of 212.17
 
 
 
