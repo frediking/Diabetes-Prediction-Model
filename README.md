@@ -120,10 +120,15 @@ patient_data_poly = poly.transform(scaled data)
 #### Predict using Ridge Regression
 prediction_ridge = ridge_regression_model.predict(patient_data_poly)[0]
 
+#### Predict using Lasso Regression
+prediction_lasso = lasso_reg_model.predict(patient_data_poly)[0]
+
 ### - Display results
 print(f"Linear Regression predicts a diabetes progression score of {prediction_lr:.2f}")
 
 print(f"Ridge Regression predicts a diabetes progression score of {prediction_ridge:.2f}")
+
+print(f"Lasso Regression predicts a diabetes progression score of {prediction_lasso:.2f}")
 
 
 ### Expected Output
