@@ -106,6 +106,8 @@ patient_data = [[0.03807591, 0.05068012, 0.06169621, 0.02187235, -0.0442235,
 
 **ridge_regression_model** = joblib.load("ridge_regression_model.pkl")
 
+**lasso_reg_model** = joblib.load("lasso_reg_model.pk1")
+
 
 ### - Scale the patient data
 scaled_data = scaler.transform(patient_data)
