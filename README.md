@@ -7,6 +7,7 @@ This project builds a **Regression model** to predict diabetes progression based
 The project now includes:
 - **Linear Regression**
 - **Ridge Regression** (L2 Regularization)
+- **Lasso Regression** (L2 Regularization)
 - **Feature Scaling** using `StandardScaler`
 - **Performance Comparison (Before vs. After Ridge Regression)**
 
@@ -50,8 +51,8 @@ The **Diabetes dataset** consists of:
 | Model Type          | MSE (Lower is Better) | R² Score (Higher is Better) |
 |---------------------|----------------------|-----------------------------|
 | **Linear Regression** | 2900.19| 0.45|
-| **Ridge Regression** | 2693.67| 0.50|
-
+| **Ridge Regression** | 2693.67| 0.501|
+| **Lasso Regression** | 2556.24| 0.517|
 ### 🔍 Observations:
 - Ridge Regression **reduces MSE**, leading to **better prediction accuracy**.
 - The **R² Score improved**, indicating a better fit to the data.
@@ -130,7 +131,7 @@ print(f"Ridge Regression predicts a diabetes progression score of {prediction_ri
 
 - Linear Regression predicts a diabetes progression score of 213.24
 - Ridge Regression predicts a diabetes progression score of 212.52
-
+- Lasso Regression predicts a diabetes progression score of 211.38
 
 
 
