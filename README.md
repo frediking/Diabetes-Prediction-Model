@@ -9,7 +9,7 @@ The project now includes:
 - **Ridge Regression** (L2 Regularization)
 - **Lasso Regression** (L2 Regularization)
 - **Feature Scaling** using `StandardScaler`
-- **Performance Comparison (Before vs. After Ridge Regression)**
+- **Performance Comparison (Before vs. After Linear, Ridge, Lasso Regression)**
 
 
 ## 📂 Dataset Information
